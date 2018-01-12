@@ -1,0 +1,11 @@
+.bjui-pageTool ul{
+    list-style: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.bjui-pageTool ul li{
+    float: left;
+    margin-right: 7px;
+}
