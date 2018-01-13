@@ -45,7 +45,7 @@ public class DatasourceConfiguration  {
         hibernateJpaVendorAdapter.setDatabase(Database.MYSQL);
         hibernateJpaVendorAdapter.setDatabasePlatform(HibernateUtil.getDialect(dataSource()));
         hibernateJpaVendorAdapter.setShowSql(true);
-        hibernateJpaVendorAdapter.setGenerateDdl(false);
+        hibernateJpaVendorAdapter.setGenerateDdl(true);//自动生成表
         return hibernateJpaVendorAdapter;
     }
 
