@@ -59,6 +59,7 @@ public class CustomRepositoryImpl<T, ID extends Serializable> extends SimpleJpaR
      * @param array
      * @return
      */
+    @Override
     @Transactional
     public int updateOrDeleteByJPQL(String sqlInfo,Object[] array){
         Query query = em.createQuery(sqlInfo);

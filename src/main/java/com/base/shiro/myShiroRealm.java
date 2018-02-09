@@ -34,6 +34,7 @@ public class myShiroRealm extends AuthorizingRealm {
 
         if(userModel!=null){
             SimpleAuthorizationInfo info=new SimpleAuthorizationInfo();
+
             return info;
         }
         return null;
@@ -49,6 +50,8 @@ public class myShiroRealm extends AuthorizingRealm {
         if(user!=null){
             // 若存在，将此用户存放到登录认证info中，无需自己做密码对比，Shiro会为我们进行密码对比校验
             return new SimpleAuthenticationInfo(user.getUsername(), user.getPassword(), getName());
+        }else{
+            logger.info("-------------->用户不存在");
         }
         return null;
     }

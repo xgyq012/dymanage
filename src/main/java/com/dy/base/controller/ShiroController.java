@@ -19,6 +19,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Map;
@@ -40,12 +41,12 @@ public class ShiroController {
 
 
     @RequestMapping(value="/login",method=RequestMethod.POST)
-    public String login(UserModel user, BindingResult bindingResult, RedirectAttributes redirectAttributes){
+    public String login(UserModel user, BindingResult bindingResult, RedirectAttributes redirectAttributes, @RequestParam("username") String username){
         if(bindingResult.hasErrors()){
             return "login";
         }
-
-        String username = user.getUsername();
+        logger.info("跳转登录");
+       /* String username = user.getUsername();
         UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
         //获取当前的Subject  
         Subject currentUser = SecurityUtils.getSubject();
@@ -81,7 +82,8 @@ public class ShiroController {
         }else{  
             token.clear();  
             return "redirect:/login";
-        }  
+        }  */
+       return "";
     }
 
     @RequestMapping(value="/logout",method=RequestMethod.GET)  

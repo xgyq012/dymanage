@@ -2,8 +2,10 @@ package com.base.boot.shiro;
 
 import com.base.shiro.myShiroRealm;
 import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.session.mgt.SimpleSessionFactory;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -30,7 +32,7 @@ public class ShiroConfig {
         // 如果不设置默认会自动寻找Web工程根目录下的"/login2.jsp"页面
         shiroFilterFactoryBean.setLoginUrl("/login");
         // 登录成功后要跳转的链接
-        shiroFilterFactoryBean.setSuccessUrl("/index");
+        shiroFilterFactoryBean.setSuccessUrl("/user/index/first");
 
         //未授权界面;
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");

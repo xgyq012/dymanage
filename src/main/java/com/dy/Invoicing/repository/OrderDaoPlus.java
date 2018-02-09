@@ -1,4 +1,4 @@
 package com.dy.Invoicing.repository;
 
-public interface OrderDaoPlus {
+public interface OrderDaoPlus  {
 }
